@@ -50,11 +50,11 @@ bool CliManager::connect() {
     username_ = FLAGS_u;
     std::string passwd = FLAGS_p;
 
-    IPv4 temp;
-    if (!network::NetworkUtils::ipv4ToInt(addr_, temp)) {
-        std::cout << "Invalid ip string\n";
-        return false;
-    }
+//    IPv4 temp;
+//    if (!network::NetworkUtils::ipv4ToInt(addr_, temp)) {
+//        std::cout << "Invalid ip string\n";
+//        return false;
+//    }
 
     auto client = std::make_unique<GraphClient>(addr_, port_);
     cpp2::ErrorCode res = client->connect(username_, passwd);
